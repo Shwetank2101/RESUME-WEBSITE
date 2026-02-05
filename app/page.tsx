@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -117,6 +118,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   )
 }

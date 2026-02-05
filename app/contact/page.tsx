@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 import ContactForm from '@/components/ContactForm'
 
 export default function ContactPage() {
@@ -124,6 +125,7 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </main>
+      <Footer />
     </div>
   )
 }

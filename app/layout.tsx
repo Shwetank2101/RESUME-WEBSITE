@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Providers } from '@/components/Providers'
 import Script from 'next/script'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://shwetankdixit.in'),
@@ -139,6 +140,7 @@ export default function RootLayout({
             __html: JSON.stringify(personSchema),
           }}
         />
+        <GoogleAnalytics />
         <Providers>
           {children}
         </Providers>

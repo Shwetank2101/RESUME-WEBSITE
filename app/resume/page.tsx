@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 import { useEffect, useState } from 'react'
 
 export default function ResumePage() {
@@ -258,6 +259,7 @@ export default function ResumePage() {
           )}
         </div>
       </main>
+      <Footer />
     </div>
   )
 }

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 import { useState } from 'react'
 
 export const dynamic = 'force-dynamic'
@@ -365,6 +366,7 @@ export default function WorkPage() {
           </motion.section>
         </div>
       </main>
+      <Footer />
     </div>
   )
 }
