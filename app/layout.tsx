@@ -130,10 +130,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://api.web3forms.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://api.web3forms.com" />
-      </head>
       <body>
         <Script
           id="person-schema"
