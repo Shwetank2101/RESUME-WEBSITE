@@ -68,18 +68,18 @@ export default function Home() {
                 Shwetank Dixit
               </h1>
 
-              <p className="text-2xl sm:text-3xl text-text-light mb-8">
+              <p className="text-2xl sm:text-3xl text-light/90 mb-8">
                 Software Engineer
               </p>
 
-              <p className="text-lg sm:text-xl text-text-light mb-12 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-light/80 mb-12 max-w-2xl mx-auto">
                 Building innovative solutions with cutting-edge technology
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/resume"
-                  className="px-8 py-4 bg-primary hover:bg-primary-dark rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary/50"
+                  className="px-8 py-4 bg-primary hover:bg-primary-dark rounded-lg font-semibold text-lg text-white transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary/50"
                 >
                   View Resume
                 </Link>
@@ -110,7 +110,7 @@ export default function Home() {
                   <div className="text-4xl font-bold text-primary mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-text-light">{stat.label}</div>
+                  <div className="text-light/90">{stat.label}</div>
                 </div>
               ))}
             </div>

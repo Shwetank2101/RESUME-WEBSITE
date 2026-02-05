@@ -23,6 +23,7 @@ function ThemeSwitcherContent() {
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-text-light hover:text-light transition-colors"
+                aria-label="Close theme menu"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -84,6 +85,8 @@ function ThemeSwitcherContent() {
         style={{
           background: `linear-gradient(135deg, ${currentTheme.colors.primary}, ${currentTheme.colors.secondary})`,
         }}
+        aria-label="Toggle theme switcher"
+        aria-expanded={isOpen}
       >
         <motion.svg
           className="w-6 h-6 text-white"
