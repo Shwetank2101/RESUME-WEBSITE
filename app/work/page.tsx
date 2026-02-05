@@ -14,46 +14,46 @@ export default function WorkPage() {
     {
       id: 1,
       title: 'Payment Gateway System',
-      description: 'Developed internal payment gateway which receives nearly Rs 70 lakhs of transactions daily on average. Integrated payment modes such as UPI Intent, UPI Collect, Wallet, E-Collect and CASA. Worked on reducing the occurrence of failed transactions from 6% to 0.002% in the first quarter. Automated the reconciliation process by releasing the funds of users in real time.',
-      tech: ['Java', 'Kotlin', 'Spring Web Flux', 'REST APIs', 'MongoDB', 'Kafka'],
+      description: 'Designed and developed a high-performance Payment Gateway handling ₹70 lakh daily transactions on average, supporting multiple payment methods. Implemented Kafka-based asynchronous processing to achieve fault tolerance, scalability, and reliable message delivery. Integrated major payment partners including Paytm, PhonePe, Yes Bank, and Cashfree. Reduced transaction failure rate from 6% to 0.002% within one quarter by improving retry strategies, idempotency handling, and payment flow optimization.',
+      tech: ['Java', 'Spring Web Flux', 'REST APIs', 'MongoDB', 'Kafka'],
       category: 'web',
       company: 'Rapipay Fintech',
-      year: '2022-2024',
+      year: '2021-2024',
       link: '#',
-      achievements: ['Rs 70 lakh daily transactions', 'Reduced failures from 6% to 0.002%', 'Real-time reconciliation', 'Multiple payment modes'],
+      achievements: ['₹70 lakh daily transactions', 'Reduced failures from 6% to 0.002%', 'Automated real-time reconciliation', 'Multiple payment partners'],
     },
     {
       id: 2,
       title: 'Identity Management System',
-      description: 'Created an Identity management system which works as an authorization server for banking application. 80 thousand users have been registered using the system with an average of 22 thousand daily logins. Implemented robust alerting mechanisms for login failures and registrations failures. Used Keycloak for managing user session and identity and implemented industry standards encryptions and hashing for security.',
-      tech: ['Kotlin', 'Spring Web Flux', 'REST APIs', 'Keycloak', 'PostgreSQL', 'Redis'],
+      description: 'Designed and built an Identity Management System using Spring WebFlux and Keycloak, serving as a centralized authorization server for banking applications. Scaled the identity platform to 1.8 lakh registered users with ~80,000 daily active users, implementing encryption, hashing, secure token management, and session handling.',
+      tech: ['Spring Web Flux', 'REST APIs', 'Keycloak', 'PostgreSQL', 'Redis'],
       category: 'web',
       company: 'Rapipay Fintech',
-      year: '2022-2024',
+      year: '2021-2024',
       link: '#',
-      achievements: ['80K+ registered users', '22K daily logins', 'Industry-standard security', 'Multiple SDK support'],
+      achievements: ['1.8 lakh registered users', '~80K daily active users', 'Industry-standard security', 'Centralized authorization server'],
     },
     {
       id: 3,
-      title: 'Internal Users Application',
-      description: 'Created a system for internal users with custom role-based authorizations. This service powers refunds, message tracking, transaction tracking, audit logs dashboard and other efficient user tracking within the application. Integrated Microsoft single sign-On (SSO) as authentication server for smooth login.',
-      tech: ['Kotlin', 'Spring Web Flux', 'Azure AD', 'Spring Security', 'REST APIs', 'PostgreSQL'],
+      title: 'Enterprise Product Catalog (EPC)',
+      description: 'Built and enhanced a large-scale Enterprise Product Catalog platform using microservices and event-driven architecture to manage product offerings, pricing, promotions, and quotes. Developed catalog, pricing, and management services using Spring Boot, supporting versioning, locking, snapshot, and revert workflows for enterprise-grade consistency.',
+      tech: ['Java', 'Spring Boot', 'Microservices', 'Kafka', 'PostgreSQL', 'Event-Driven Architecture'],
       category: 'web',
-      company: 'Rapipay Fintech',
-      year: '2022-2024',
+      company: 'Deutsche Telekom',
+      year: '2024-Present',
       link: '#',
-      achievements: ['Role-based authorization', 'Microsoft SSO integration', 'Audit logs dashboard', 'Transaction tracking'],
+      achievements: ['Large-scale EPC platform', 'Event-driven architecture', 'Versioning and snapshot workflows', 'Kafka-based event propagation'],
     },
     {
       id: 4,
-      title: 'Credit Card Management System',
-      description: 'Built backend services for credit card management in the T-Life app, handling spending, saving, rewards, and billing data for 40 million credit card customers. Implemented scalable microservices architecture for high availability and performance.',
+      title: 'T-Life App Backend Services',
+      description: 'Designed and developed backend services for the T-Life (T-Mobile) application, enabling broadband management and performance diagnostics by integrating multiple downstream systems. Built performance diagnostic workflows with strong observability, enabling faster issue detection and resolution for broadband customers.',
       tech: ['Java', 'Spring Boot', 'Microservices', 'PostgreSQL', 'Kafka', 'AWS'],
       category: 'web',
       company: 'Deutsche Telekom',
-      year: '2024',
+      year: '2024-Present',
       link: '#',
-      achievements: ['40M+ customers served', 'Microservices architecture', 'Real-time data processing', 'High availability'],
+      achievements: ['Broadband management', 'Performance diagnostics', 'Strong observability', 'Multiple downstream integrations'],
     },
   ]
 
@@ -62,26 +62,28 @@ export default function WorkPage() {
       name: 'Deutsche Telekom Digital Labs',
       role: 'Software Engineer',
       period: 'June 2024 - Present',
-      location: 'Gurgaon, Haryana',
-      description: 'Building backend services for credit card management in the T-Life app, handling spending, saving, rewards, and billing data for 40 million credit card customers.',
+      location: 'Gurgaon, India',
+      description: 'Designed and developed backend services for the T-Life (T-Mobile) application, enabling broadband management and performance diagnostics by integrating multiple downstream systems. Built and enhanced a large-scale Enterprise Product Catalog (EPC) platform using microservices and event-driven architecture to manage product offerings, pricing, promotions, and quotes.',
       achievements: [
-        'Serving 40M+ credit card customers',
-        'Backend services for T-Life app',
-        'Credit card management system',
-        'Real-time data processing',
+        'Enterprise Product Catalog (EPC) platform',
+        'T-Life app backend services',
+        'Kafka-based event propagation',
+        'Performance diagnostic workflows',
+        'Award: Future Maker of the Quarter – Q2 2025',
       ],
     },
     {
       name: 'Rapipay Fintech Pvt. Ltd.',
-      role: 'Software Engineer',
-      period: 'Mar 2022 – June 2024',
-      location: 'Noida',
-      description: 'Designed and developed Payment Gateway System providing various payment methods to end users, enhancing system reliability using Kafka queues for supporting nearly Rs 70 lakh of transactions daily. Collaborated with key vendors like Paytm, PhonePe, Yes Bank and Cashfree. Worked on Identity Management System for banking application with Keycloak, enforcing advanced security measures for user onboarding with more than 80 thousand users.',
+      role: 'Software Engineer II',
+      period: 'Sep 2021 – Jun 2024',
+      location: 'Noida, India',
+      description: 'Designed and developed a high-performance Payment Gateway handling ₹70 lakh daily transactions on average, supporting multiple payment methods. Implemented Kafka-based asynchronous processing to achieve fault tolerance, scalability, and reliable message delivery. Integrated major payment partners including Paytm, PhonePe, Yes Bank, and Cashfree. Designed and built an Identity Management System using Spring WebFlux and Keycloak, serving as a centralized authorization server for banking applications.',
       achievements: [
-        'Rs 70 lakh daily transactions',
-        '80K+ registered users',
+        '₹70 lakh daily transactions',
+        '1.8 lakh registered users, ~80K daily active users',
         'Reduced failed transactions from 6% to 0.002%',
-        'Microservices architecture implementation',
+        'Automated real-time reconciliation and fund release',
+        'Identity Management System with Keycloak',
       ],
     },
     {
@@ -101,18 +103,20 @@ export default function WorkPage() {
 
   const techStack = [
     { name: 'Java', level: 95, category: 'Language', years: '4+' },
-    { name: 'Kotlin', level: 90, category: 'Language', years: '3+' },
-    { name: 'Python', level: 85, category: 'Language', years: '3+' },
+    { name: 'Python', level: 85, category: 'Language', years: '4+' },
+    { name: 'SQL', level: 90, category: 'Language', years: '4+' },
     { name: 'Spring Boot', level: 95, category: 'Framework', years: '4+' },
-    { name: 'Spring Web Flux', level: 88, category: 'Framework', years: '3+' },
+    { name: 'Spring Web Flux', level: 88, category: 'Framework', years: '4+' },
     { name: 'Hibernate', level: 90, category: 'ORM', years: '4+' },
     { name: 'Spring Data JPA', level: 92, category: 'ORM', years: '4+' },
     { name: 'PostgreSQL', level: 90, category: 'Database', years: '4+' },
     { name: 'MongoDB', level: 88, category: 'Database', years: '4+' },
-    { name: 'Redis', level: 85, category: 'Cache', years: '3+' },
-    { name: 'Apache Kafka', level: 90, category: 'Messaging', years: '3+' },
-    { name: 'AWS (EC2, S3)', level: 85, category: 'Cloud', years: '3+' },
-    { name: 'Keycloak', level: 85, category: 'Security', years: '2+' },
+    { name: 'Redis', level: 85, category: 'Cache', years: '4+' },
+    { name: 'Apache Kafka', level: 90, category: 'Messaging', years: '4+' },
+    { name: 'AWS', level: 85, category: 'Cloud', years: '4+' },
+    { name: 'Docker', level: 80, category: 'DevOps', years: '3+' },
+    { name: 'CI/CD', level: 80, category: 'DevOps', years: '3+' },
+    { name: 'Keycloak', level: 85, category: 'Security', years: '3+' },
     { name: 'Git', level: 95, category: 'Version Control', years: '4+' },
   ]
 
@@ -201,6 +205,33 @@ export default function WorkPage() {
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </motion.section>
+
+          {/* Awards & Achievements Section */}
+          <motion.section
+            className="mb-20"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <h2 className="text-3xl font-bold mb-8 text-primary">
+              Awards & Achievements
+            </h2>
+            <div className="bg-dark-light p-8 rounded-xl border border-primary/20">
+              <div className="flex items-start gap-4">
+                <svg className="w-6 h-6 text-accent mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <div>
+                  <h3 className="text-xl font-semibold text-light mb-2">
+                    Future Maker of the Quarter – Q2 2025
+                  </h3>
+                  <p className="text-text-light">
+                    Recognized at Deutsche Telekom Digital Labs for demonstrating exceptional ownership, leadership skills, and driving measurable team impact.
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.section>
 

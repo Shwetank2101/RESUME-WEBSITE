@@ -101,7 +101,7 @@ export default function Home() {
               {[
                 { label: 'Projects', value: '4+' },
                 { label: 'Technologies', value: '14+' },
-                { label: 'Experience', value: '3+ Years' },
+                { label: 'Experience', value: '4+ Years' },
               ].map((stat, i) => (
                 <div
                   key={i}
