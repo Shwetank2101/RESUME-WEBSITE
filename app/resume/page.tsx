@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 export default function ResumePage() {
   const [isClient, setIsClient] = useState(false)
   const [showLinkedInModal, setShowLinkedInModal] = useState(false)
+  const [profileImageSrc, setProfileImageSrc] = useState('/profile-picture.jpg')
 
   useEffect(() => {
     setIsClient(true)
@@ -41,6 +42,32 @@ export default function ResumePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
+            {/* Profile Picture */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-6 flex justify-center"
+            >
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-3 border-primary/30 shadow-lg shadow-primary/50 ring-2 ring-primary/10">
+                <img
+                  src={profileImageSrc}
+                  alt="Shwetank Dixit"
+                  className="w-full h-full object-cover"
+                  onError={() => {
+                    // Fallback chain: Local -> LinkedIn -> Placeholder
+                    if (profileImageSrc === '/profile-picture.jpg') {
+                      // Try LinkedIn if local fails
+                      setProfileImageSrc('https://media.licdn.com/dms/image/v2/D5603AQFgUPJaFNgjYA/profile-displayphoto-scale_400_400/B56ZvHVtLuIEAk-/0/1768575916176?e=1772064000&v=beta&t=PG5AV8ISPlBfXlrBwPKwhuLmjD5bGAiR_ivtSZbzv_0')
+                    } else {
+                      // If LinkedIn also fails, show placeholder with initials
+                      setProfileImageSrc('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%236366f1" width="400" height="400"/%3E%3Ctext fill="white" font-family="Arial" font-size="100" x="50%25" y="50%25" text-anchor="middle" dy=".3em"%3ESD%3C/text%3E%3C/svg%3E')
+                    }
+                  }}
+                />
+              </div>
+            </motion.div>
+
             <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               My Resume
             </h1>

@@ -9,6 +9,7 @@ import Footer from '@/components/Footer'
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isMounted, setIsMounted] = useState(false)
+  const [profileImageSrc, setProfileImageSrc] = useState('/profile-picture.jpg')
 
   useEffect(() => {
     setIsMounted(true)
@@ -65,6 +66,32 @@ export default function Home() {
         <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div>
+              {/* Profile Picture */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="mb-8 flex justify-center"
+              >
+                <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary/30 shadow-lg shadow-primary/50 ring-4 ring-primary/10">
+                  <img
+                    src={profileImageSrc}
+                    alt="Shwetank Dixit - Software Engineer"
+                    className="w-full h-full object-cover"
+                    onError={() => {
+                      // Fallback chain: Local -> LinkedIn -> Placeholder
+                      if (profileImageSrc === '/profile-picture.jpg') {
+                        // Try LinkedIn if local fails
+                        setProfileImageSrc('https://media.licdn.com/dms/image/v2/D5603AQFgUPJaFNgjYA/profile-displayphoto-scale_400_400/B56ZvHVtLuIEAk-/0/1768575916176?e=1772064000&v=beta&t=PG5AV8ISPlBfXlrBwPKwhuLmjD5bGAiR_ivtSZbzv_0')
+                      } else {
+                        // If LinkedIn also fails, show placeholder with initials
+                        setProfileImageSrc('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%236366f1" width="400" height="400"/%3E%3Ctext fill="white" font-family="Arial" font-size="100" x="50%25" y="50%25" text-anchor="middle" dy=".3em"%3ESD%3C/text%3E%3C/svg%3E')
+                      }
+                    }}
+                  />
+                </div>
+              </motion.div>
+
               <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
                 Shwetank Dixit
               </h1>
