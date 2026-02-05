@@ -25,19 +25,51 @@ export default function ContactForm() {
     setIsSubmitting(true)
     setSubmitStatus('idle')
 
-    // Create mailto link (you can replace this with an API call later)
-    const mailtoLink = `mailto:shwetankdixitt@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`
-    
-    // Open email client
-    window.location.href = mailtoLink
-    
-    // Simulate success (you can replace with actual API call)
-    setTimeout(() => {
-      setSubmitStatus('success')
+    try {
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+
+      if (!accessKey) {
+        throw new Error('Contact form is not configured. Please contact the site administrator.')
+      }
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `Contact Form: ${formData.subject}`,
+          from_name: formData.name,
+          from_email: formData.email,
+          message: `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send message. Please try again.')
+      }
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitStatus('success')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        setTimeout(() => setSubmitStatus('idle'), 5000)
+      } else {
+        throw new Error(result.message || 'Failed to send message.')
+      }
+    } catch (error) {
+      // Log error for debugging (only in development)
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Contact form error:', error)
+      }
+      setSubmitStatus('error')
+      setTimeout(() => setSubmitStatus('idle'), 5000)
+    } finally {
       setIsSubmitting(false)
-      setFormData({ name: '', email: '', subject: '', message: '' })
-      setTimeout(() => setSubmitStatus('idle'), 3000)
-    }, 500)
+    }
   }
 
   return (
@@ -138,7 +170,16 @@ export default function ContactForm() {
           animate={{ opacity: 1, y: 0 }}
           className="p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-center"
         >
-          ✓ Message sent! Your email client should open shortly.
+          ✓ Message sent successfully! I&apos;ll get back to you soon.
+        </motion.div>
+      )}
+      {submitStatus === 'error' && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-center"
+        >
+          ✗ Something went wrong. Please try again or email me directly at shwetankdixitt@gmail.com
         </motion.div>
       )}
     </motion.form>

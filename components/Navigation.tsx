@@ -14,6 +14,7 @@ function NavigationContent() {
     { href: '/', label: 'Home' },
     { href: '/resume', label: 'Resume' },
     { href: '/work', label: 'Work' },
+    { href: '/contact', label: 'Contact' },
   ]
 
   return (
@@ -80,6 +81,7 @@ export default function Navigation() {
                 { href: '/', label: 'Home' },
                 { href: '/resume', label: 'Resume' },
                 { href: '/work', label: 'Work' },
+                { href: '/contact', label: 'Contact' },
               ].map((item) => (
                 <Link
                   key={item.href}
